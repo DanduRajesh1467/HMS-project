@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>
+            LOGIN PAGE
+        </title>
+         <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: black;
+                color: aliceblue;
+            }
+            .main{
+                position: relative;
+            }
+            .shape{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+            .background>:nth-child(1){
+                background: linear-gradient(#1845ad,#23a2f6);
+                position: absolute;
+                top: -100px;
+                right: -100px;
+            }
+            .background>:nth-child(2){
+                background: linear-gradient(to right ,#ff512f,#f09819);
+                position: absolute;
+                bottom: -100px;
+                left: -100px;
+            }
+            form{
+                width: 320px;
+                height: 420px;
+                padding: 50px;
+                gap: 30px;
+                display: flex;
+                flex-direction: column;
+                background-color: rgba(255,255, 255,0.13);
+                backdrop-filter: blur(10px);
+                border-radius: 5px;
+                box-shadow: 0 0 40px rgba(8,7,16,0.6);
+            }
+            h3{
+                font-size: 35px;
+                text-align: center;
+            }
+            label{
+                font-size: 17px;
+            }
+            input{
+                margin-top: -20px;
+                padding: 12px;
+                background-color: rgba(255,255, 255,0.07);
+                border: none;
+                font-size: 15px;
+                border-radius: 6px;
+                color: white;
+            }
+            ::placeholder{
+                color: rgba(218,218,218);
+            }
+            .login{
+                padding: 20px;
+                font-size: 17px;
+                border-radius: 6px;
+                font-weight: 600;
+                transition: all 0.2s;
+            }
+            .login:active{
+                transform: scale(0.9);
+            }
+            .social{
+                display: flex;
+                gap: 90px;
+            }
+            .social .Google{
+                background-color: red;
+                padding: 10px 30px;
+                border: none;
+                color: white;
+                font-weight: 600;
+                border-radius: 5%;
+                transition: all 0.2s;
+
+            }
+            .social .Facebook{
+                background-color: blue;
+                padding: 10px 30px;
+                border: none;
+                color: white;
+                font-weight: 600;
+                border-radius: 5%;
+                transition: all 0.2s;
+            }
+            .Google:active{
+                transform: scale(0.9);
+            }
+            .Facebook:active{
+                transform: scale(0.9);
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="main" >
+            <div class="background">
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <form method="POST">
+                <h3>Login Here</h3>
+                <label for="">Username</label>
+                <input type="username" placeholder="Username" required>
+                <label for="">Password</label>
+                <input type="password" placeholder="Password" required>
+                <button class="login">Login</button>
+                <div class="social">
+                    <button class="Google">Google</button>
+                    <button class="Facebook">Facebook</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

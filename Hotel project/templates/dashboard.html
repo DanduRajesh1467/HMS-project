@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <h1>Hotel Management System</h1>
+    <a href="/logout" class="logout">Admin Logout</a>
+</div>
+
+<div class="cards">
+    <div class="card blue">Add Booking</div>
+    <div class="card green">View Bookings</div>
+    <div class="card orange">Generate Bill</div>
+    <div class="card red">Checkout</div>
+</div>
+
+<div class="welcome">
+    <h2>Welcome, Admin!</h2>
+    <p>Manage hotel operations efficiently!</p>
+</div>
+
+<h3 class="title">Add Booking</h3>
+<form method="POST" action="/add" style="text-align:center;">
+<input name="name" placeholder="Name">
+<input name="phone" placeholder="Phone">
+<input name="room" placeholder="Room">
+<select name="type">
+<option>standard</option>
+<option>deluxe</option>
+<option>suite</option>
+</select>
+<input type="date" name="checkin">
+<input type="date" name="checkout">
+<button>Add</button>
+</form>
+
+<h3 class="title">Current Bookings</h3>
+
+<table>
+<tr>
+<th>Name</th><th>Room</th><th>Type</th><th>Checkin</th><th>Checkout</th><th>Actions</th>
+</tr>
+
+{% for b in bookings %}
+<tr>
+<td>{{b.name}}</td>
+<td>{{b.room}}</td>
+<td>{{b.type}}</td>
+<td>{{b.checkin}}</td>
+<td>{{b.checkout}}</td>
+<td>
+<a href="/bill/{{b.room}}">Bill</a> |
+<a href="/checkout/{{b.room}}">Checkout</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
